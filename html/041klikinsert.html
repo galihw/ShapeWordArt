@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Edukasi dengan Shape dan WordArt</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="../img/favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon_io/favicon-16x16.png">
+	<style>
+		.bg {
+			max-width: 840px;/* Lebar maksimal halaman */
+			margin: 0 auto;
+			width: 100%;
+			height: 472px;
+			position: absolute;
+			background-color: #222222;
+			background-size: 100%;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.btn {
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			outline = none;
+			width: 50px;
+			height: 50px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.klikbar {
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			outline = none;
+			width: 136px;
+			height: 35px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.bar {
+			position: absolute;
+			cursor: default;
+			touch-action: none;
+			outline = none;
+			width: 737px;
+			height: 85px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.klikshape {
+			position: absolute;
+			cursor: default;
+			touch-action: none;
+			outline = none;
+			width: 191px;
+			height: 48px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.klikword {
+			position: absolute;
+			cursor: default;
+			touch-action: none;
+			outline = none;
+			width: 139px;
+			height: 112px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.btn0 { /*klik bentuk*/
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			outline = none;
+			width: 93.75px;
+			height: 43.13px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.btn1 { /*klik bentuk*/
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			outline = none;
+			width: 65.0px;
+			height: 43.13px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.btnS { /*klik shape1234*/
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			outline = none;
+			width: 36px;
+			height: 36px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.btnW { /*klik wordart123*/
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			outline = none;
+			width: 116.56px;
+			height: 21.73px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.myimgS {
+			position: absolute;
+			cursor: default;
+			touch-action: none;
+			outline = none;
+			width: 80px;
+			height: 80px;
+			/*background-color: #ff0000;*/
+			opacity : 0.5;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.myimgW {
+			position: absolute;
+			cursor: default;
+			touch-action: none;
+			outline = none;
+			width: 250px;
+			height: 80px;
+			/*background-color: #ff0000;*/
+			opacity : 0.5;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.glow {
+			/*outline: 2px solid yellow;*/
+			box-shadow: 0 0 15px #ffeb3b, 0 0 25px #ffc107;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class ="bg" id="bg">
+		<div class="btn" id="btn"></div>
+		<div class="klikbar" id="klikbar"></div>
+		<div class="bar" id="bar">
+			<div class="btn0" id="btn0"></div>
+			<div class="btn1" id="btn1"></div>
+		</div>
+		<div class="klikshape" id="klikshape">
+			<div class="btnS" id="btnS1"></div>
+			<div class="btnS" id="btnS2"></div>
+			<div class="btnS" id="btnS3"></div>
+			<div class="btnS" id="btnS4"></div>
+		</div>
+		<div class="klikword" id="klikword">
+			<div class="btnW" id="btnW1"></div>
+			<div class="btnW" id="btnW2"></div>
+			<div class="btnW" id="btnW3"></div>
+		</div>
+		<div class="myimgS" id="myimgS"></div>
+		<div class="myimgW" id="myimgW"></div>
+	</div>
+	<script>
+		const myBG = document.getElementById('bg');
+		const btn = document.getElementById('btn');
+		const klikbar = document.getElementById('klikbar');
+		const bar = document.getElementById('bar');
+		const btn0 = document.getElementById('btn0');
+		const btn1 = document.getElementById('btn1');
+		const klikshape = document.getElementById('klikshape');
+		const btnS1 = document.getElementById('btnS1');
+		const btnS2 = document.getElementById('btnS2');
+		const btnS3 = document.getElementById('btnS3');
+		const btnS4 = document.getElementById('btnS4');
+		const klikword = document.getElementById('klikword');
+		const btnW1 = document.getElementById('btnW1');
+		const btnW2 = document.getElementById('btnW2');
+		const btnW3 = document.getElementById('btnW3');
+		const myimgS = document.getElementById('myimgS');
+		const myimgW = document.getElementById('myimgW');
+		bg.style.backgroundImage = "url(../img/041-klakklik.png)";
+		btn.style.backgroundImage = "url(../img/btnutama-next.png)";
+		bar.style.backgroundImage = "url(../img/041-0klik.png)";
+		klikshape.style.backgroundImage = "url(../img/041-1shape.png)";
+		klikword.style.backgroundImage = "url(../img/041-2art.png)";
+		let lebarJendela = window.innerWidth;
+		let tinggiJendela = window.innerHeight;
+		var scl = 1;
+		var dy = 0;var y0 = 304.85;
+		function XYbenda(){
+			lebarJendela = window.innerWidth;
+			tinggiJendela = window.innerHeight;
+			myBG.x = window.scrollX+(lebarJendela-840*scl)/2;
+			myBG.y = window.scrollY+(tinggiJendela-472*scl)/2;
+			myBG.style.left = ''+(myBG.x)+'px';
+			myBG.style.top = ''+(myBG.y)+'px';
+			btn.style.left = ''+(770.0)+'px';
+			btn.style.top = ''+(402.0)+'px';
+			klikbar.style.left = ''+(122.0)+'px';
+			klikbar.style.top = ''+(114.0)+'px';
+			bar.style.left = ''+(15.0)+'px';
+			bar.style.top = ''+(148.86)+'px';
+			btn0.style.left = ''+(142)+'px';
+			btn0.style.top = ''+(25)+'px';
+			btn1.style.left = ''+(660)+'px';
+			btn1.style.top = ''+(25)+'px';
+			klikshape.style.left = ''+(110.8)+'px';
+			klikshape.style.top = ''+(222)+'px';
+			btnS1.style.left = ''+(6.69)+'px';
+			btnS1.style.top = ''+(5.29)+'px';
+			btnS2.style.left = ''+(53.4)+'px';
+			btnS2.style.top = ''+(5.29)+'px';
+			btnS3.style.left = ''+(100.1)+'px';
+			btnS3.style.top = ''+(5.29)+'px';
+			btnS4.style.left = ''+(146.81)+'px';
+			btnS4.style.top = ''+(5.29)+'px';
+			klikword.style.left = ''+(598.31)+'px';
+			klikword.style.top = ''+(222)+'px';
+			btnW1.style.left = ''+(10.53)+'px';
+			btnW1.style.top = ''+(7.87)+'px';
+			btnW2.style.left = ''+(10.53)+'px';
+			btnW2.style.top = ''+(44.63)+'px';
+			btnW3.style.left = ''+(10.53)+'px';
+			btnW3.style.top = ''+(81.39)+'px';
+			myimgS.style.left = ''+(343.39)+'px';
+			myimgS.style.top = ''+(y0+dy)+'px';
+			myimgW.style.left = ''+(258.39)+'px';
+			myimgW.style.top = ''+(y0+dy)+'px';
+		}
+		
+		bar.style.display = "none"; bar.on = false;
+		btn0.style.display = "none"; btn0.on = false;
+		btn1.style.display = "none"; btn1.on = false;
+		klikshape.style.display = "none";
+		klikword.style.display = "none";
+		
+		XYbenda();// mengatur posisi x dan y
+		btn.addEventListener('click', () => {
+			location.href = "042desainposter.html";
+		});
+		klikshape.classList.add("glow");
+		klikword.classList.add("glow");
+		klikbar.classList.add("glow");
+		klikbar.addEventListener('click', () => {
+			console.log(bar.on);
+			if(bar.on)	bar.style.display = "none";
+			else		bar.style.display = "";
+			bar.on = !bar.on;
+			btn0.style.display = "";
+			btn1.style.display = "";
+			btn0.on = false;
+			btn1.on = false;
+			klikshape.style.display = "none";
+			klikword.style.display = "none";
+			klikbar.classList.remove("glow")
+		});
+		
+		function klik01(e){
+			if(e.target==btn0){
+				btn0.on = !btn0.on;
+				btn1.on = false;
+				btn0.classList.remove("glow")
+			}else{
+				btn0.on = false;
+				btn1.on = !btn1.on;
+				btn1.classList.remove("glow")
+			}
+			if(btn0.on)	klikshape.style.display = "";
+			else		klikshape.style.display = "none";
+			if(btn1.on)	klikword.style.display = "";
+			else		klikword.style.display = "none";
+		}
+		
+		// glow ada
+		btn0.classList.add("glow");
+		btn1.classList.add("glow");
+		btn0.addEventListener('click', klik01);
+		btn1.addEventListener('click', klik01);
+		
+		function klikS(e){
+			klikshape.classList.remove("glow")
+			myimgS.style.display = "";
+			myimgW.style.display = "none";
+			myimgS.style.backgroundImage = "url(../img/041-1"+e.target.no+".png)";
+		}
+		function klikW(e){
+			klikword.classList.remove("glow")
+			myimgS.style.display = "none";
+			myimgW.style.display = "";
+			myimgW.style.backgroundImage = "url(../img/041-2"+e.target.no+".png)";
+		}
+		for(var i=1;i<=4;i++){ // untuk tombol shape
+			document.getElementById('btnS'+i).no = i;
+			document.getElementById('btnS'+i).addEventListener('click', klikS);
+		}
+		for(var i=1;i<=3;i++){ // untuk tombol wordart
+			document.getElementById('btnW'+i).no = i;
+			document.getElementById('btnW'+i).addEventListener('click', klikW);
+		}
+	</script>
+	
+	<script>
+		// bergerak atas bawah pakai sinus;
+		var sdt = 0;
+		requestAnimationFrame(moveLompat);
+		
+		function moveLompat() {
+			sdt+=5;
+			if(sdt==360)sdt=0;
+			var dy = -Math.abs(20*Math.sin(sdt*Math.PI/180));
+			myimgS.style.top = ''+(y0+dy)+'px';
+			myimgW.style.top = ''+(y0+dy)+'px';
+			requestAnimationFrame(moveLompat); 
+		}
+	</script>
+	<script>
+		
+		var fixzoom,fixscale;
+		document.body.style.backgroundColor = "black";
+		window.addEventListener('resize', () => {
+			ZoomAll();
+		});
+
+		function UbahWindow(){
+			XYbenda();
+		}
+		function ZoomAll(){
+			let lebarJendela = window.innerWidth;
+			let tinggiJendela = window.innerHeight;
+			var xscale = lebarJendela/840;
+			var yscale = tinggiJendela/472;
+			scl = 0.95*Math.min(xscale,yscale);
+			fixscale = scl;
+			fixzoom = scl*100;
+			document.body.style.zoom = ""+fixzoom+"%";
+			UbahWindow();
+		}
+		
+		ZoomAll();
+		function handleClick(event) {
+			console.log("handleClick");
+		}
+		myBG.addEventListener('click', handleClick);
+		setTimeout(() => {
+			console.log("handleClick")
+			ZoomAll();
+			myBG.removeEventListener('click', handleClick);
+		}, 100);
+		
+	</script>
+</body>
+</html>

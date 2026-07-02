@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Edukasi dengan Shape dan WordArt</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="../img/favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon_io/favicon-16x16.png">
+	<style>
+		.bg {
+			max-width: 840px; /* Lebar maksimal halaman */
+			margin: 0 auto;
+			width: 100%;
+			height: 472px;
+			position: absolute;
+			background-color: #222222;
+			background-size: 100%;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.btn {
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			outline = none;
+			width: 50px; 
+			height: 50px; 
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.myimg {
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			outline = none;
+			width: 10px; 
+			height: 10px; 
+			/*background-color: #ff0000;*/
+			/*opacity : 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class ="bg" id="bg">
+		<div class="btn" id="btn"></div>
+	</div>
+	<script>
+		const myBG = document.getElementById('bg');
+		const btn = document.getElementById('btn');
+		bg.style.backgroundImage = "url(../img/032-materi.png)";
+		btn.style.backgroundImage = "url(../img/btnutama-next.png)";
+		let lebarJendela = window.innerWidth;
+		let tinggiJendela = window.innerHeight;
+		var scl = 1;
+		function XYbenda(){
+			lebarJendela = window.innerWidth;
+			tinggiJendela = window.innerHeight;
+			myBG.x = window.scrollX+(lebarJendela-840*scl)/2;
+			myBG.y = window.scrollY+(tinggiJendela-472*scl)/2;
+			myBG.style.left = ''+(myBG.x)+'px';
+			myBG.style.top = ''+(myBG.y)+'px';
+			btn.style.left = ''+(770.0)+'px';
+			btn.style.top = ''+(402.0)+'px';
+		}
+		
+		XYbenda(); // mengatur posisi x dan y
+		btn.addEventListener('click', () => {
+			location.href = "033materi.html";
+		});
+		
+	</script>
+	
+	<script>
+	</script>
+	<script>
+		
+		var fixzoom,fixscale;
+		document.body.style.backgroundColor = "black";
+		window.addEventListener('resize', () => {
+			ZoomAll();
+		});
+
+		function UbahWindow(){
+			XYbenda();
+		}
+		function ZoomAll(){
+			let lebarJendela = window.innerWidth;
+			let tinggiJendela = window.innerHeight;
+			var xscale = lebarJendela/840;
+			var yscale = tinggiJendela/472;
+			scl = 0.95*Math.min(xscale,yscale);
+			fixscale = scl;
+			fixzoom = scl*100;
+			document.body.style.zoom = ""+fixzoom+"%";
+			UbahWindow();
+		}
+		
+		ZoomAll();
+		function handleClick(event) {
+			console.log("handleClick");
+		}
+		myBG.addEventListener('click', handleClick);
+		setTimeout(() => {
+			console.log("handleClick")
+			ZoomAll();
+			myBG.removeEventListener('click', handleClick);
+		}, 100);
+		
+	</script>
+</body>
+</html>

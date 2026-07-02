@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Poster Edukasi dengan Shape dan WordArt</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="../img/favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon_io/favicon-16x16.png">
+	<style>
+		.bg {
+			max-width: 840px; /* Lebar maksimal halaman */
+			margin: 0 auto;
+			width: 100%;
+			height: 472px;
+			position: absolute;
+			background-color: #222222;
+			background-size: 100%;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.btn {
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			outline = none;
+			width: 50px; 
+			height: 50px; 
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.myimg {
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			outline = none;
+			width: 10px; 
+			height: 10px; 
+			/*background-color: #ff0000;*/
+			/*opacity : 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+        input[type=range] {
+			/*background-color: white;*/
+			cursor: pointer;
+            width: 180px;
+        }
+		.inputan {
+			position: absolute;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 12px;
+			width: 180px;
+			height: 23.85px;
+		}
+		.btnaddW {
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			outline = none;
+			width: 184.17px;
+			height: 23.85px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.btnsetW {
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			outline: 2px solid yellow;
+			width: 89.44px;
+			height: 23.85px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.BoxsetW {
+			position: absolute;
+			cursor: default;
+			touch-action: none;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.pelangi {
+			position: absolute;
+			cursor: pointer;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: black;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size:  20px;
+			user-select: none;
+			background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+		.glow {
+			position: absolute;
+			cursor: pointer;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size:  20px;
+			user-select: none;
+			color: #FFFF00; /* Warna teks kuning */
+				text-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00;
+		}
+		.bayangan {
+			position: absolute;
+			cursor: pointer;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size:  20px;
+			font-weight: bold;
+			color: #00ff00; /* Warna teks utama */
+			font-family: Arial, Helvetica, sans-serif;
+			
+			/* Efek Flat Shadow (Tanpa Blur) */
+			text-shadow: 
+			1px 1px #000000,  2px 2px #000000,  3px 3px #000000, 
+			4px 4px #000000,  5px 5px #000000,  6px 6px #000000;
+		}
+		.Boxkertas{
+			position: absolute;
+			width: 210px;
+			height: 297px;
+			background-color: #b3b3b3;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.kertas{
+			position: absolute;
+			width: 210px;
+			height: 297px;
+			background-color: #b3b3b3;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.maaf{
+			position: absolute;
+			width: 352px;
+			height: 41px;
+			/*background-color: #b3b3b3;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.BoxsetS {
+			position: absolute;
+			cursor: default;
+			touch-action: none;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.btnsetS {
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			width: 48.12px;
+			height: 48.12px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.objS{
+			position: absolute;
+			cursor: pointer;
+			width: 40px;
+			height: 40px;
+			/*background-color: #b3b3b3;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.WarnasetS {
+			position: absolute;
+			cursor: default;
+			touch-action: none;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.warnaS {
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			width: 12.75px;
+			height: 12.75px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.WarnaKertas {
+			position: absolute;
+			cursor: default;
+			touch-action: none;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.warnaK {
+			position: absolute;
+			cursor: pointer;
+			touch-action: none;
+			width: 20px;
+			height: 20px;
+			/*background-color: #ff0000;*/
+			/*opacity: 0.5;*/
+			user-select: none;
+			-webkit-user-select: none;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class ="bg" id="bg">
+		<div class="btn" id="btn"></div>
+		<div class="btn" id="reload"></div>
+		
+		<div class ="Boxkertas" id="Boxkertas">
+			<div class ="kertas" id="kertas"></div>
+			<div class="pelangi" id="objWP1"></div>
+			<div class="pelangi" id="objWP2"></div>
+			<div class="pelangi" id="objWP3"></div>
+			<div class="pelangi" id="objWP4"></div>
+			<div class="pelangi" id="objWP5"></div>
+			
+			<div class="glow" id="objWG1"></div>
+			<div class="glow" id="objWG2"></div>
+			<div class="glow" id="objWG3"></div>
+			<div class="glow" id="objWG4"></div>
+			<div class="glow" id="objWG5"></div>
+			
+			<div class="bayangan" id="objWB1"></div>
+			<div class="bayangan" id="objWB2"></div>
+			<div class="bayangan" id="objWB3"></div>
+			<div class="bayangan" id="objWB4"></div>
+			<div class="bayangan" id="objWB5"></div>
+			
+			<div class="objS" id="objSA1"></div>
+			<div class="objS" id="objSA2"></div>
+			<div class="objS" id="objSA3"></div>
+			<div class="objS" id="objSA4"></div>
+			<div class="objS" id="objSA5"></div>
+			
+			<div class="objS" id="objSB1"></div>
+			<div class="objS" id="objSB2"></div>
+			<div class="objS" id="objSB3"></div>
+			<div class="objS" id="objSB4"></div>
+			<div class="objS" id="objSB5"></div>
+			
+			<div class="objS" id="objSC1"></div>
+			<div class="objS" id="objSC2"></div>
+			<div class="objS" id="objSC3"></div>
+			<div class="objS" id="objSC4"></div>
+			<div class="objS" id="objSC5"></div>
+			
+			<div class="objS" id="objSD1"></div>
+			<div class="objS" id="objSD2"></div>
+			<div class="objS" id="objSD3"></div>
+			<div class="objS" id="objSD4"></div>
+			<div class="objS" id="objSD5"></div>
+		</div>
+		
+		<input class="inputan" id="inputan" type="text" maxlength="14" oninput="funcInput(this.value)">
+		<div class="btnaddW" id="btnaddW"></div>
+		<div class="BoxsetW" id="BoxsetW">
+			<div class="btnsetW" id="setW1"></div>
+			<div class="btnsetW" id="setW2"></div>
+			<div class="btnsetW" id="setW3"></div>
+		</div>
+		<div class="BoxsetS" id="BoxsetS">
+			<div class="btnsetS" id="setS1"></div>
+			<div class="btnsetS" id="setS2"></div>
+			<div class="btnsetS" id="setS3"></div>
+			<div class="btnsetS" id="setS4"></div>
+		</div>
+		<div class="WarnasetS" id="WarnasetS">
+			<div class="warnaS" id="warnaS1"></div>
+			<div class="warnaS" id="warnaS2"></div>
+			<div class="warnaS" id="warnaS3"></div>
+			<div class="warnaS" id="warnaS4"></div>
+			<div class="warnaS" id="warnaS5"></div>
+			<div class="warnaS" id="warnaS6"></div>
+			<div class="warnaS" id="warnaS7"></div>
+		</div>
+		<div class="WarnaKertas" id="WarnaKertas">
+			<div class="warnaK" id="warna1"></div>
+			<div class="warnaK" id="warna2"></div>
+		</div>
+		
+		
+		<div class="maaf" id="maaf"></div>
+	</div>
+	<script>
+		const myBG = document.getElementById('bg');
+		const btn = document.getElementById('btn');
+		const reload = document.getElementById('reload');
+		const Boxkertas = document.getElementById('Boxkertas');
+		const kertas = document.getElementById('kertas');
+		const inputan = document.getElementById('inputan');
+		const btnaddW = document.getElementById('btnaddW');
+		const BoxsetW = document.getElementById('BoxsetW');
+		const BoxsetS = document.getElementById('BoxsetS');
+		const WarnasetS = document.getElementById('WarnasetS');
+		const WarnaKertas = document.getElementById('WarnaKertas');
+		const maaf = document.getElementById('maaf');
+		bg.style.backgroundImage = "url(../img/042-posterkeren.png)";
+		btn.style.backgroundImage = "url(../img/btnutama-next.png)";
+		reload.style.backgroundImage = "url(../img/btnutama-tryagain.png)";
+		maaf.style.backgroundImage = "url(../img/042-maaf.png)";
+		let lebarJendela = window.innerWidth;
+		let tinggiJendela = window.innerHeight;
+		var scl = 1;
+		function XYbenda(){
+			lebarJendela = window.innerWidth;
+			tinggiJendela = window.innerHeight;
+			myBG.x = window.scrollX+(lebarJendela-840*scl)/2;
+			myBG.y = window.scrollY+(tinggiJendela-472*scl)/2;
+			myBG.style.left = ''+(myBG.x)+'px';
+			myBG.style.top = ''+(myBG.y)+'px';
+			Boxkertas.style.left = ''+(452.39)+'px';
+			Boxkertas.style.top = ''+(110.59)+'px';
+			btn.style.left = ''+(770.0)+'px';
+			btn.style.top = ''+(402.0)+'px';
+			reload.style.left = ''+(770.0)+'px';
+			reload.style.top = ''+(340.0)+'px';
+			inputan.style.left = ''+(35.53)+'px';
+			inputan.style.top = ''+(142.57)+'px';
+			btnaddW.style.left = ''+(35.53)+'px';
+			btnaddW.style.top = ''+(174.29)+'px';
+			BoxsetW.style.left = ''+(230.57)+'px';
+			BoxsetW.style.top = ''+(142.57)+'px';
+			BoxsetS.style.left = ''+(36.49)+'px';
+			BoxsetS.style.top = ''+(254.16)+'px';
+			WarnasetS.style.left = ''+(95)+'px';
+			WarnasetS.style.top = ''+(320)+'px';
+			WarnaKertas.style.left = ''+(125)+'px';
+			WarnaKertas.style.top = ''+(375)+'px';
+			for(var i=1;i<=3;i++){
+				document.getElementById('setW'+i).style.left = ''+(0)+'px';
+				document.getElementById('setW'+i).style.top = ''+(0+23.85*(i-1))+'px';
+			}
+			for(var i=1;i<=4;i++){
+				document.getElementById('setS'+i).style.left = ''+(0+78.46*(i-1))+'px';
+				document.getElementById('setS'+i).style.top = ''+(0)+'px';
+			}
+			for(var i=1;i<=7;i++){
+				document.getElementById('warnaS'+i).style.left = ''+(0+15*(i-1))+'px';
+				document.getElementById('warnaS'+i).style.top = ''+(0)+'px';
+			}
+			for(var i=1;i<=2;i++){
+				document.getElementById('warna'+i).style.left = ''+(0+25*(i-1))+'px';
+				document.getElementById('warna'+i).style.top = ''+(0)+'px';
+			}
+			maaf.style.left = ''+(244)+'px';
+			maaf.style.top = ''+(253)+'px';
+		}
+		
+		XYbenda(); // mengatur posisi x dan y
+		inputan.value = "input teks";
+		maaf.style.display = "none";
+		btn.addEventListener('click', () => {
+			location.href = "043kuisseru.html";
+		});
+		reload.addEventListener('click', () => {
+			location.href = "042desainposter.html";
+		});
+		maaf.addEventListener('click', () => {
+			maaf.style.display = "none";
+		});
+		
+	</script>
+	<script>
+		var selectedEl = null;
+        function selectElement(el) {
+            if (selectedEl) {
+                selectedEl.classList.remove('selected-element');
+            }
+            selectedEl = el;
+            selectedEl.classList.add('selected-element');
+        }
+		
+		function setupDraggable(el,xmax,ymax) {
+			console.log(xmax,ymax);
+            let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+            el.addEventListener('mousedown', dragMouseDown);
+            el.addEventListener('touchstart', dragTouchStart, { passive: false });
+
+            function dragMouseDown(e) {
+                e.preventDefault();
+                selectElement(el);
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.addEventListener('mouseup', closeDragElement);
+                document.addEventListener('mousemove', elementDrag);
+            }
+
+            function dragTouchStart(e) {
+                selectElement(el);
+                const touch = e.touches[0];
+                pos3 = touch.clientX;
+                pos4 = touch.clientY;
+                document.addEventListener('touchend', closeDragElement);
+                document.addEventListener('touchmove', elementTouchDrag, { passive: false });
+            }
+
+            function elementDrag(e) {
+                e.preventDefault();
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+
+                // Set positions and lock bounds inside poster page
+                let newTop = el.offsetTop - pos2;
+                let newLeft = el.offsetLeft - pos1;
+
+                if (newLeft >= 0 && newLeft <= xmax) el.style.left = newLeft + "px";
+                if (newTop >= 0 && newTop <= ymax) el.style.top = newTop + "px";
+            }
+
+            function elementTouchDrag(e) {
+                e.preventDefault();
+                const touch = e.touches[0];
+                pos1 = pos3 - touch.clientX;
+                pos2 = pos4 - touch.clientY;
+                pos3 = touch.clientX;
+                pos4 = touch.clientY;
+
+                let newTop = el.offsetTop - pos2;
+                let newLeft = el.offsetLeft - pos1;
+
+                if (newLeft >= 0 && newLeft <= xmax) el.style.left = newLeft + "px";
+                if (newTop >= 0 && newTop <= ymax) el.style.top = newTop + "px";
+            }
+
+            function closeDragElement() {
+                document.removeEventListener('mouseup', closeDragElement);
+                document.removeEventListener('mousemove', elementDrag);
+                document.removeEventListener('touchend', closeDragElement);
+                document.removeEventListener('touchmove', elementTouchDrag);
+            }
+        }
+	</script>
+	<script>
+		function setKotakW(n){
+			nwordart=n;
+			for(var i=1;i<=3;i++){
+				if(n==i){
+					document.getElementById('setW'+i).style.outline = "2px solid yellow";
+				}else{
+					document.getElementById('setW'+i).style.outline = "none";
+				}
+			}
+		}
+		function setKotakS(n){
+			nshape=n;
+			for(var i=1;i<=4;i++){
+				if(n==i){
+					document.getElementById('setS'+i).style.outline = "2px solid yellow";
+				}else{
+					document.getElementById('setS'+i).style.outline = "none";
+				}
+			}
+		}
+		function setWarnaS(n){
+			//putih,merah,oren,hijau,biru,pink,ungu
+			/*
+			putih  ffffff filter: "brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(7439%) hue-rotate(271deg) brightness(116%) contrast(96%)";
+			merah  ff0000 filter: "brightness(0) saturate(100%) invert(33%) sepia(95%) saturate(7119%) hue-rotate(355deg) brightness(104%) contrast(123%)";
+			oren   facc15 filter: "brightness(0) saturate(100%) invert(93%) sepia(13%) saturate(5656%) hue-rotate(346deg) brightness(101%) contrast(96%)";
+			hijau  34d399 filter: "brightness(0) saturate(100%) invert(68%) sepia(67%) saturate(453%) hue-rotate(103deg) brightness(93%) contrast(85%)";
+			biru   38bdf8 filter: "brightness(0) saturate(100%) invert(66%) sepia(92%) saturate(2042%) hue-rotate(168deg) brightness(100%) contrast(94%)";
+			pink   fb7185 filter: "brightness(0) saturate(100%) invert(68%) sepia(33%) saturate(3126%) hue-rotate(306deg) brightness(96%) contrast(106%)";
+			ungu   818cf8 filter: "brightness(0) saturate(100%) invert(69%) sepia(69%) saturate(4545%) hue-rotate(208deg) brightness(100%) contrast(95%)";
+			*/
+			var sfilter = [
+							"brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(7439%) hue-rotate(271deg) brightness(116%) contrast(96%)",
+							"brightness(0) saturate(100%) invert(33%) sepia(95%) saturate(7119%) hue-rotate(355deg) brightness(104%) contrast(123%)",
+							"brightness(0) saturate(100%) invert(93%) sepia(13%) saturate(5656%) hue-rotate(346deg) brightness(101%) contrast(96%)",
+							"brightness(0) saturate(100%) invert(68%) sepia(67%) saturate(453%) hue-rotate(103deg) brightness(93%) contrast(85%)",
+							"brightness(0) saturate(100%) invert(66%) sepia(92%) saturate(2042%) hue-rotate(168deg) brightness(100%) contrast(94%)",
+							"brightness(0) saturate(100%) invert(68%) sepia(33%) saturate(3126%) hue-rotate(306deg) brightness(96%) contrast(106%)",
+							"brightness(0) saturate(100%) invert(69%) sepia(69%) saturate(4545%) hue-rotate(208deg) brightness(100%) contrast(95%)"
+							];
+			Sfilter = sfilter[n-1];
+			for(var i=1;i<=7;i++){
+				if(n==i){
+					document.getElementById('warnaS'+i).style.outline = "2px solid yellow";
+				}else{
+					document.getElementById('warnaS'+i).style.outline = "none";
+				}
+			}
+		}
+		function setKWarnaKertas(n){
+			var Arfilter = [
+							"",
+							"brightness(0) saturate(100%) invert(78%) sepia(13%) saturate(13%) hue-rotate(324deg) brightness(90%) contrast(90%)",
+							"brightness(0) saturate(100%) invert(22%) sepia(49%) saturate(366%) hue-rotate(174deg) brightness(88%) contrast(88%)"
+							];
+			for(var i=1;i<=2;i++){
+				if(n==i){
+					document.getElementById('warna'+i).style.outline = "2px solid yellow";
+				}else{
+					document.getElementById('warna'+i).style.outline = "none";
+				}
+			}
+			kertas.style.filter = Arfilter[n];
+		}
+		function kliksetW(e){
+			setKotakW(e.target.no);
+		}
+		function kliksetS(e){
+			setKotakS(e.target.no);
+		}
+		function klikwarnaS(e){
+			setWarnaS(e.target.no);
+		}
+		function klikwarnaK(e){
+			setKWarnaKertas(e.target.no);
+		}
+		function setefekWdanS(){// untuk tombol pilih efek wordart 
+			for(var i=1;i<=3;i++){ 
+				document.getElementById('setW'+i).no = i;
+				document.getElementById('setW'+i).addEventListener('click', kliksetW);
+			}
+			for(var i=1;i<=4;i++){ 
+				document.getElementById('setS'+i).no = i;
+				document.getElementById('setS'+i).addEventListener('click', addS);
+				//document.getElementById('setS'+i).addEventListener('click', kliksetS);
+			}
+			for(var i=1;i<=7;i++){ 
+				document.getElementById('warnaS'+i).no = i;
+				document.getElementById('warnaS'+i).addEventListener('click', klikwarnaS);
+			}
+			for(var i=1;i<=2;i++){ 
+				document.getElementById('warna'+i).no = i;
+				document.getElementById('warna'+i).addEventListener('click', klikwarnaK);
+			}
+		}
+		function setobjWdanSAll(){ // untuk tombol pilih wordart 12345
+			for(var i=1;i<=5;i++){
+				var el = document.getElementById('objWP'+i);
+				el.style.display = "none";
+				el.innerHTML = "teks awal";
+				el.style.left = 55+'px';
+				el.style.top = (10+40*i)+'px';
+				setupDraggable(el,Boxkertas.offsetWidth-el.offsetWidth-2,Boxkertas.offsetHeight-el.offsetHeight);
+			}
+			for(var i=1;i<=5;i++){
+				var el = document.getElementById('objWG'+i);
+				el.style.display = "none";
+				el.innerHTML = "teks awal";
+				el.style.left = 55+'px';
+				el.style.top = (10+40*i)+'px';
+				setupDraggable(el,Boxkertas.offsetWidth-el.offsetWidth-2,Boxkertas.offsetHeight-el.offsetHeight);
+			}
+			for(var i=1;i<=5;i++){
+				var el = document.getElementById('objWB'+i);
+				el.style.display = "none";
+				el.innerHTML = "teks awal";
+				el.style.left = 55+'px';
+				el.style.top = (10+40*i)+'px';
+				setupDraggable(el,Boxkertas.offsetWidth-el.offsetWidth-2,Boxkertas.offsetHeight-el.offsetHeight);
+			}
+			for(var i=1;i<=5;i++){
+				var el = document.getElementById('objSA'+i);
+				el.style.backgroundImage = "url(../img/042-S1.png)";
+				el.style.display = "none";
+				el.style.left = 55+'px';
+				el.style.top = (10+40*i)+'px';
+				setupDraggable(el,Boxkertas.offsetWidth-el.offsetWidth-2,Boxkertas.offsetHeight-el.offsetHeight);
+			}
+			for(var i=1;i<=5;i++){
+				var el = document.getElementById('objSB'+i);
+				el.style.backgroundImage = "url(../img/042-S2.png)";
+				el.style.display = "none";
+				el.style.left = 55+'px';
+				el.style.top = (10+40*i)+'px';
+				setupDraggable(el,Boxkertas.offsetWidth-el.offsetWidth-2,Boxkertas.offsetHeight-el.offsetHeight);
+			}
+			for(var i=1;i<=5;i++){
+				var el = document.getElementById('objSC'+i);
+				el.style.backgroundImage = "url(../img/042-S3.png)";
+				el.style.display = "none";
+				el.style.left = 55+'px';
+				el.style.top = (10+40*i)+'px';
+				setupDraggable(el,Boxkertas.offsetWidth-el.offsetWidth-2,Boxkertas.offsetHeight-el.offsetHeight);
+			}
+			for(var i=1;i<=5;i++){
+				var el = document.getElementById('objSD'+i);
+				el.style.backgroundImage = "url(../img/042-S4.png)";
+				el.style.display = "none";
+				el.style.left = 55+'px';
+				el.style.top = (10+40*i)+'px';
+				setupDraggable(el,Boxkertas.offsetWidth-el.offsetWidth-2,Boxkertas.offsetHeight-el.offsetHeight);
+			}
+		}
+		
+		var nbenda = 0;
+		var nwordart = 1;
+		var nshape = 0;
+		var Sfilter = "brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(7439%) hue-rotate(271deg) brightness(116%) contrast(96%)";
+		setKotakW(1);
+		setefekWdanS()
+		setobjWdanSAll();
+		setWarnaS(1);
+		setKWarnaKertas(1)
+		function addW(e){
+			var arname = ['','objWP','objWG','objWB'];
+			var mcname = arname[nwordart];
+			nbenda++;
+			if(nbenda>5){
+				maaf.style.display = "";
+				console.log("lebih");
+			}
+			nbenda = Math.min(5,nbenda);
+			if(nbenda<=5){
+				//var el = document.getElementById('objWP'+nbenda);
+				var el = document.getElementById(mcname+nbenda);
+				el.style.display = "";
+				el.innerHTML = inputan.value;
+			}
+		}
+		function addS(e){
+			kliksetS(e);
+			var arAbjad = ["","A","B","C","D"]
+			var abjadfix = arAbjad[e.target.no];
+			nbenda++;
+			if(nbenda>5){
+				maaf.style.display = "";
+				console.log("lebih");
+			}
+			nbenda = Math.min(5,nbenda);
+			if(nbenda<=5){
+				var el = document.getElementById('objS'+abjadfix+''+nbenda);
+				el.style.display = "";
+				el.style.filter = Sfilter;
+			}
+		}
+		btnaddW.addEventListener('click', addW);
+		
+	</script>
+	<script>
+		function funcInput(val){
+			//Nama.innerHTML = val;
+			//teksHasil3.innerHTML = '"'+val+'"';
+			//cekTrue[2]++;
+			//Selesai();
+		}
+	</script>
+	
+	<script>
+		// seleksi objek yang mau di drag
+		/*
+		setupDraggable(shape1,myBG.offsetWidth-shape1.offsetWidth,myBG.offsetHeight-shape1.offsetHeight);
+		setupDraggable(shape2,myBG.offsetWidth-shape2.offsetWidth,myBG.offsetHeight-shape2.offsetHeight);
+		setupDraggable(shape3,myBG.offsetWidth-shape3.offsetWidth,myBG.offsetHeight-shape3.offsetHeight);
+		setupDraggable(shape4,myBG.offsetWidth-shape4.offsetWidth,myBG.offsetHeight-shape4.offsetHeight);
+		setupDraggable(shape5,myBG.offsetWidth-shape5.offsetWidth,myBG.offsetHeight-shape5.offsetHeight);
+		*/
+	</script>
+	<script>
+		
+		var fixzoom,fixscale;
+		document.body.style.backgroundColor = "black";
+		window.addEventListener('resize', () => {
+			ZoomAll();
+		});
+
+		function UbahWindow(){
+			XYbenda();
+		}
+		function ZoomAll(){
+			let lebarJendela = window.innerWidth;
+			let tinggiJendela = window.innerHeight;
+			var xscale = lebarJendela/840;
+			var yscale = tinggiJendela/472;
+			scl = 0.95*Math.min(xscale,yscale);
+			fixscale = scl;
+			fixzoom = scl*100;
+			document.body.style.zoom = ""+fixzoom+"%";
+			UbahWindow();
+		}
+		
+		ZoomAll();
+		function handleClick(event) {
+			console.log("handleClick");
+		}
+		myBG.addEventListener('click', handleClick);
+		setTimeout(() => {
+			console.log("handleClick")
+			ZoomAll();
+			myBG.removeEventListener('click', handleClick);
+		}, 100);
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Edukasi dengan Shape dan WordArt</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="../img/favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon_io/favicon-16x16.png">
+	<style>
+		.bg {
+			max-width: 840px; /* Lebar maksimal halaman */
+			margin: 0 auto;
+			width: 100%;
+			height: 472px;
+			position: absolute;
+			background-color: #222222;
+			background-size: 100%;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.bgmeja {
+			margin: 0 auto;
+			width: 840px;
+			height: 472px;
+			position: absolute;
+		}
+		.klikbtn {
+			position: absolute;
+			width: 100px; 
+			height: 40px; 
+			background-color: none;
+			cursor: pointer;
+			touch-action: none;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.divimg {
+			position: absolute;
+			width: 80px;
+			height: 80px;
+			background-color: none;
+			cursor: pointer;
+			user-select: none;
+			-webkit-user-select: none;
+			justify-content: center;
+		}
+		.meja {
+			position: absolute;
+			width: 820px;
+			height: 280px;
+			background-color: none;
+			cursor: default;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.btn {
+			position: absolute;
+			width: 50px; 
+			height: 50px; 
+			background-color: none;
+			cursor: pointer;
+			touch-action: none;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.btngrey {
+			position: absolute;
+			width: 50px; 
+			height: 50px; 
+			background-color: none;
+			cursor: default;
+			touch-action: none;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.btnMenu {
+			position: absolute;
+			width: 130px; 
+			height: 150px; 
+			background-color: none;
+			cursor: pointer;
+			touch-action: none;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.kotaksoal{
+			position: absolute;
+			cursor: default;
+			font-family: Tahoma, sans-serif;
+			font-size: 20px;
+			color: white;
+			background-color:none;
+			width: 700px;
+			height: 300px;
+			touch-action: none;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.kotaknilai{
+			position: absolute;
+			cursor: default;
+			font-family: Tahoma, sans-serif;
+			font-size: 20px;
+			color: white;
+			background-color:none;
+			width: 370px;
+			height: 300px;
+			touch-action: none;
+			user-select: none;
+			-webkit-user-select: none;
+			/*tambahan*/
+			text-align: center;
+		}
+		.radio-besar {
+			transform: scale(1.5); /* Ubah angka sesuai kebutuhan (1.5x lebih besar) */
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		.checkmark {
+			height: 30px; /* Lebar checkbox */
+			width: 30px;  /* Tinggi checkbox */
+			border-radius: 4px;
+			margin-right: 12px; /* Jarak antara kotak dan teks */
+			
+			
+		}
+		.padTeks {
+			width: 18px;
+			height: 18px;
+			cursor: pointer;
+		}
+		.checkbox-container {
+			display: flex;
+			align-items: center; /* Meratakan elemen di tengah secara vertikal */
+		}
+		.checkbox-container input {
+			margin-right: 8px; /* Memberi jarak antara checkbox dan label */
+		}
+	</style>
+</head>
+<body>
+	<div class ="bg" id="bg">
+		<div class="btngrey" id="btngBeranda"></div>
+		<div class="btngrey" id="btngKembali"></div>
+		<div class="btngrey" id="btngLanjut"></div>
+		<div class="btngrey" id="btngUlang"></div>
+		<div class="btn" id="btnBeranda"></div>
+		<div class="btn" id="btnKembali"></div>
+		<div class="btn" id="btnLanjut"></div>
+		<div class="btn" id="btnUlang"></div>
+		
+		
+		<div id="myDivSoal1">
+			<div id="kiri1" class="kotaksoal">
+				1. Fitur manakah yang paling tepat digunakan jika kamu ingin membuat <a style="color: #FFFF00;">judul poster yang memiliki efek teks artistik, bayangan, dan warna-warni</a>?
+			</div>
+			<div id="kanan1" class="kotaksoal">
+				<input class="radio-besar" type="radio" id="pil1A" name="soal1" value="A">
+				<label id="teks11" for="soal1">jawabanA</label><br>
+				<input class="radio-besar" type="radio" id="pil1B" name="soal1" value="B">
+				<label id="teks12" for="soal1">jawabanB</label><br>
+				<input class="radio-besar" type="radio" id="pil1C" name="soal1" value="C">
+				<label id="teks13" for="soal1">jawabanC</label><br>
+			</div>
+		</div>
+		
+		
+		<div id="myDivSoal2">
+			<div id="kiri2" class="kotaksoal">
+				2. Di tab menu manakah kamu dapat menemukan pilihan untuk memasukkan <a style="color: #FFFF00;">Shapes</a> dan <a style="color: #FFFF00;">WordArt</a> ke dalam dokumen?
+			</div>
+			<div id="kanan2" class="kotaksoal">
+				<input class="radio-besar" type="radio" id="pil2A" name="soal2" value="A">
+				<label id="teks21" for="pil2A">jawabanA</label><br>
+				<input class="radio-besar" type="radio" id="pil2B" name="soal2" value="B">
+				<label id="teks22" for="pil2B">jawabanB</label><br>
+				<input class="radio-besar" type="radio" id="pil2C" name="soal2" value="C">
+				<label id="teks23" for="pil2C">jawabanC</label><br>
+			</div>
+		</div>
+		
+		<div id="myDivSoal3">
+			<div id="kiri3" class="kotaksoal">
+				3. Pilihlah pernyataan yang benar mengenai keunggulan menggunakan WordArt untuk sebuah poster edukasi! (<i>Jawaban lebih dari satu</i>)
+			</div>
+			<div id="kanan3" class="kotaksoal">
+				<input class="checkmark" type="checkbox" name="soal3" value="A">
+				<label class="padTeks" id="teks31">jawabanA</label><br>
+				<input class="checkmark" type="checkbox" name="soal3" value="B">
+				<label class="padTeks"  id="teks32">jawabanB</label><br>
+				<input class="checkmark" type="checkbox" name="soal3" value="C">
+				<label class="padTeks"  id="teks33">jawabanC</label><br>
+			</div>
+		</div>
+		
+		<div id="myDivSoal4">
+			<div id="kiri4" class="kotaksoal">
+				4. Apa saja yang bisa kita lakukan untuk <a style="color: #FFFF00;">memodifikasi sebuah Shape</a> agar poster edukasi menjadi lebih informatif? (<i>Jawaban lebih dari satu</i>)
+			</div>
+			<div id="kanan4" class="kotaksoal">
+				<input class="checkmark" type="checkbox" name="soal4" value="A">
+				<label class="padTeks"  id="teks41">jawabanA</label><br>
+				<input class="checkmark" type="checkbox" name="soal4" value="B">
+				<label class="padTeks"  id="teks42">jawabanB</label><br>
+				<input class="checkmark" type="checkbox" name="soal4" value="C">
+				<label class="padTeks"  id="teks43">jawabanC</label><br>
+			</div>
+		</div>
+		
+		<div id="myDivSoal5">
+			<div id="kiri5" class="kotaksoal">
+				5. Jika kamu membuat poster dan <a style="color: #FFFF00;">sebuah kotak (Shape) menutupi teks penting</a>, fitur pengaturan posisi mana yang sebaiknya digunakan? (<i>Jawaban lebih dari satu</i>)
+			</div>
+			<div id="kanan5" class="kotaksoal">
+				<input class="checkmark" type="checkbox" name="soal5" value="A">
+				<label class="padTeks"  id="teks51">jawabanA</label><br>
+				<input class="checkmark" type="checkbox" name="soal5" value="B">
+				<label class="padTeks"  id="teks52">jawabanB</label><br>
+				<input class="checkmark" type="checkbox" name="soal5" value="C">
+				<label class="padTeks" id="teks53">jawabanC</label><br>
+			</div>
+		</div>
+		<div id="myNilai" class="kotaknilai">
+		</div>
+		
+		
+	</div>
+	<script>
+		function RandomMyArray(Arr){
+			for (var i=0; i<Arr.length; i++){
+				var r = Math.floor(Math.random() * Arr.length);
+				var a = Arr[i];
+				Arr[i] = Arr[r];
+				Arr[r] = a;
+			}
+			return Arr;
+		}
+		function getABCD(arr,jawab){
+			var arABCD = ["A","B","C","D"];
+			var getABCD = "";
+			for(var i=0;i<arABCD.length;i++){
+				if(arr[i]==jawab) getABCD = arABCD[i]
+			}
+			return getABCD;
+		}
+		function getABCDEFGHIJ(arr,jawab){
+			var arABCD = ["A","B","C","D","E","F","G","H","I","J"];
+			var getABCD = "";
+			for(var i=0;i<arABCD.length;i++){
+				if(arr[i]==jawab) getABCD = arABCD[i]
+			}
+			return getABCD;
+		}
+		
+		// data soal
+		var arsoal1 = [["Page Number","WordArt","Table"],"WordArt"];
+		arsoal1[0] = RandomMyArray(arsoal1[0])
+		var jawab1=getABCD(arsoal1[0],arsoal1[1]);
+		for(var i=1;i<=3;i++)	document.getElementById("teks1"+i).textContent = arsoal1[0][i-1];
+		
+		
+		var arsoal2 = [["View","Design","Insert"],"Insert"];
+		arsoal2[0] = RandomMyArray(arsoal2[0])
+		var jawab2=getABCD(arsoal2[0],arsoal2[1]);
+		for(var i=1;i<=3;i++)	document.getElementById("teks2"+i).textContent = arsoal2[0][i-1];
+
+		
+		var arsoal3 = [["Teks dapat diubah bentuknya menjadi melengkung atau melingkar.",
+						"Teks secara otomatis akan memperbaiki kesalahan ejaan materi.",
+						"Teks dapat diberi efek 'Glow' atau 'Shadow' agar lebih mencolok."],
+						["Teks dapat diubah bentuknya menjadi melengkung atau melingkar.",
+						"Teks dapat diberi efek 'Glow' atau 'Shadow' agar lebih mencolok."]];
+		arsoal3[0] = RandomMyArray(arsoal3[0])
+		var jawab31=getABCD(arsoal3[0],arsoal3[1][0]);
+		var jawab32=getABCD(arsoal3[0],arsoal3[1][1]);
+		var ar3 = [jawab31,jawab32];
+		ar3.sort();
+		var jawab3=ar3[0]+""+ar3[1];
+		for(var i=1;i<=3;i++)	document.getElementById("teks3"+i).textContent = arsoal3[0][i-1];
+
+		
+		var arsoal4 = [["Menghapus seluruh sistem operasi komputer melalui format shape.",
+						"Menambahkan teks di dalam bentuk untuk penjelasan materi.",
+						"Mengubah warna isi (Shape Fill) untuk mengelompokkan informasi."],
+						["Menambahkan teks di dalam bentuk untuk penjelasan materi.",
+						"Mengubah warna isi (Shape Fill) untuk mengelompokkan informasi."]];
+		arsoal4[0] = RandomMyArray(arsoal4[0])
+		var jawab41=getABCD(arsoal4[0],arsoal4[1][0]);
+		var jawab42=getABCD(arsoal4[0],arsoal4[1][1]);
+		var ar4 = [jawab41,jawab42];
+		ar4.sort();
+		var jawab4=ar4[0]+""+ar4[1];
+		for(var i=1;i<=3;i++)	document.getElementById("teks4"+i).textContent = arsoal4[0][i-1];
+
+		
+		var arsoal5 = [["Send Backward","Send to Back","Bring to Front"],["Send Backward","Send to Back"]];
+		arsoal5[0] = RandomMyArray(arsoal5[0])
+		var jawab51=getABCD(arsoal5[0],arsoal5[1][0]);
+		var jawab52=getABCD(arsoal5[0],arsoal5[1][1]);
+		var ar5 = [jawab51,jawab52];
+		ar5.sort();
+		var jawab5=ar5[0]+""+ar5[1];
+		console.log(jawab5);
+		for(var i=1;i<=3;i++)	document.getElementById("teks5"+i).textContent = arsoal5[0][i-1];
+
+		
+	</script>	
+	<script>
+		// posisi awal dan image awal
+		const myBG = document.getElementById("bg");
+		const btnBeranda = document.getElementById("btnBeranda");
+		const btnKembali = document.getElementById("btnKembali");
+		const btnLanjut = document.getElementById("btnLanjut");
+		const btnUlang = document.getElementById("btnUlang");
+		const btngBeranda = document.getElementById("btngBeranda");
+		const btngKembali = document.getElementById("btngKembali");
+		const btngLanjut = document.getElementById("btngLanjut");
+		const btngUlang = document.getElementById("btngUlang");
+		
+		const mcKiri1 = document.getElementById("kiri1");
+		const mcKanan1 = document.getElementById("kanan1");
+		const mcKiri2 = document.getElementById("kiri2");
+		const mcKanan2 = document.getElementById("kanan2");
+		const mcKiri3 = document.getElementById("kiri3");
+		const mcKanan3 = document.getElementById("kanan3");
+		const mcKiri4 = document.getElementById("kiri4");
+		const mcKanan4 = document.getElementById("kanan4");
+		const mcKiri5 = document.getElementById("kiri5");
+		const mcKanan5 = document.getElementById("kanan5");
+		const mcNilai = document.getElementById("myNilai");
+		myBG.style.backgroundImage = "url(../img/043-kuiskuas.png)";
+		btnBeranda.style.backgroundImage = "url(../img/btnutama-home.png)";
+		btnKembali.style.backgroundImage = "url(../img/btnutama-prev.png)";
+		btnLanjut.style.backgroundImage = "url(../img/btnutama-next.png)";
+		btnUlang.style.backgroundImage = "url(../img/btnutama-tryagain.png)";
+		btngBeranda.style.backgroundImage = "url(../img/btnutama-homeg.png)";
+		btngKembali.style.backgroundImage = "url(../img/btnutama-prevg.png)";
+		btngLanjut.style.backgroundImage = "url(../img/btnutama-nextg.png)";
+		btngUlang.style.backgroundImage = "url(../img/btnutama-tryagaing.png)";
+		let lebarJendela = window.innerWidth;
+		let tinggiJendela = window.innerHeight;
+		var scl = 1;
+		var xyBtn = [[770,402],[770,222],[770,282],[770,342]];
+		var xyBtnDiv = [[32,150],[32,300],[205,150]];
+	
+		function XYbenda(){
+			lebarJendela = window.innerWidth;
+			tinggiJendela = window.innerHeight;
+			myBG.x = window.scrollX+(lebarJendela-840*scl)/2;
+			myBG.y = window.scrollY+(tinggiJendela-472*scl)/2;
+			myBG.style.left = ''+(myBG.x)+'px';
+			myBG.style.top = ''+(myBG.y)+'px';
+			btnBeranda.style.left = (xyBtn[0][0])+'px';
+			btnBeranda.style.top = (xyBtn[0][1])+'px';
+			btnKembali.style.left = (xyBtn[1][0])+'px';
+			btnKembali.style.top = (xyBtn[1][1])+'px';
+			btnLanjut.style.left = (xyBtn[2][0])+'px';
+			btnLanjut.style.top = (xyBtn[2][1])+'px';
+			btnUlang.style.left = (xyBtn[3][0])+'px';
+			btnUlang.style.top = (xyBtn[3][1])+'px';
+			btngBeranda.style.left = (xyBtn[0][0])+'px';
+			btngBeranda.style.top = (xyBtn[0][1])+'px';
+			btngKembali.style.left = (xyBtn[1][0])+'px';
+			btngKembali.style.top = (xyBtn[1][1])+'px';
+			btngLanjut.style.left = (xyBtn[2][0])+'px';
+			btngLanjut.style.top = (xyBtn[2][1])+'px';
+			btngUlang.style.left = (xyBtn[3][0])+'px';
+			btngUlang.style.top = (xyBtn[3][1])+'px';
+			
+			mcNilai.style.left = (xyBtnDiv[2][0])+'px';
+			mcNilai.style.top = (xyBtnDiv[2][1])+'px';
+			
+			mcKiri1.style.left = (xyBtnDiv[0][0])+'px';
+			mcKiri1.style.top = (xyBtnDiv[0][1])+'px';
+			mcKiri2.style.left = (xyBtnDiv[0][0])+'px';
+			mcKiri2.style.top = (xyBtnDiv[0][1])+'px';
+			mcKiri3.style.left = (xyBtnDiv[0][0])+'px';
+			mcKiri3.style.top = (xyBtnDiv[0][1])+'px';
+			mcKiri4.style.left = (xyBtnDiv[0][0])+'px';
+			mcKiri4.style.top = (xyBtnDiv[0][1])+'px';
+			mcKiri5.style.left = (xyBtnDiv[0][0])+'px';
+			mcKiri5.style.top = (xyBtnDiv[0][1])+'px';
+			mcKanan1.style.left = (xyBtnDiv[1][0])+'px';
+			mcKanan1.style.top = (xyBtnDiv[1][1])+'px';
+			mcKanan2.style.left = (xyBtnDiv[1][0])+'px';
+			mcKanan2.style.top = (xyBtnDiv[1][1])+'px';
+			mcKanan3.style.left = (xyBtnDiv[1][0])+'px';
+			mcKanan3.style.top = (xyBtnDiv[1][1])+'px';
+			mcKanan4.style.left = (xyBtnDiv[1][0])+'px';
+			mcKanan4.style.top = (xyBtnDiv[1][1])+'px';
+			mcKanan5.style.left = (xyBtnDiv[1][0])+'px';
+			mcKanan5.style.top = (xyBtnDiv[1][1])+'px';
+		}
+		
+		XYbenda(); // mengatur posisi x dan y
+		//btn.addEventListener('click', () => {
+		//	location.href = "001beranda.html";
+		//});
+		document.body.style.backgroundColor = "black";
+		
+		
+	</script>
+	<script>
+		btnBeranda.addEventListener("click", function(){	location.href = "001beranda.html";})
+		btnKembali.addEventListener("click", function(){	ViewSoal(-1);})
+		btnLanjut.addEventListener("click", function(){		ViewSoal(1);})
+		btnUlang.addEventListener("click", function(){		location.href = "043kuisseru.html";})
+		
+		btnBeranda.style.display = "none";//
+		btnKembali.style.display = "none";
+		btnLanjut.style.display = "";//none
+		btnUlang.style.display = "none";//
+	</script>
+	<script>
+		var arResult = [0,0,0,0,0];
+		function cekPilihan() {
+			arResult[0] = 0;
+			arResult[1] = 0;
+			arResult[2] = 0;
+			arResult[3] = 0;
+			arResult[4] = 0;
+			var nakhir = 0;
+			const pilihan1 = document.getElementsByName('soal1');
+			let terpilih1 = "";
+			for (let i = 0; i < pilihan1.length; i++) {
+				if (pilihan1[i].checked) {
+					terpilih1 = pilihan1[i].value;
+					break;
+				}
+			}
+			if (terpilih1 == jawab1) {//jawab1 hasil dari random di atas ("B")
+				arResult[0] = 1;
+			}
+			Akhir();
+			
+			const pilihan2 = document.getElementsByName('soal2');
+			let terpilih2 = "";
+			for (let i = 0; i < pilihan2.length; i++) {
+				if (pilihan2[i].checked) {
+					terpilih2 = pilihan2[i].value;
+					break;
+				}
+			}
+			if (terpilih2 == jawab2) {//jawab2 hasil dari random di atas ("B")
+				arResult[1] = 1;
+			}
+			Akhir();
+			
+			var val3="";
+			const checkboxes1 = document.querySelectorAll('input[name="soal3"]:checked');
+			var n3 = checkboxes1.length;
+			checkboxes1.forEach((cb,index) => {
+				val3+=cb.value;
+				n3--;
+				if(n3==0){
+					if(val3==jawab3)arResult[2] = 1;//jawab3 hasil dari random di atas ("AC")
+					console.log("val3 = "+val3);
+					Akhir();
+				}
+			});
+			
+			var val4="";
+			const checkboxes2 = document.querySelectorAll('input[name="soal4"]:checked');
+			var n4 = checkboxes2.length;
+			checkboxes2.forEach((cb,index) => {
+				val4+=cb.value;;
+				n4--;
+				if(n4==0){
+					if(val4==jawab4)arResult[3] = 1;//jawab4 hasil dari random di atas ("AC")
+					console.log("val4 = "+val4);
+					Akhir();
+				}
+				
+			});
+			
+			var val5="";
+			const checkboxes3 = document.querySelectorAll('input[name="soal5"]:checked');
+			var n5 = checkboxes3.length;
+			checkboxes3.forEach((cb,index) => {
+				val5+=cb.value;;
+				n5--;
+				if(n5==0){
+					if(val5==jawab5)arResult[4] = 1;//jawab5 hasil dari random di atas ("BCFHJ")
+					console.log("val5 = "+val5+" "+jawab5);
+					Akhir();
+				}
+			});
+			
+			function Akhir(){
+				nakhir++;
+				if(nakhir==5)	console.log("arResult : "+arResult);
+			}
+		}
+	</script>
+	<script>
+		nosoal = 1;
+		var arid = ["myDivSoal1","myDivSoal2","myDivSoal3","myDivSoal4","myDivSoal5"];
+		Hilang(nosoal)
+		function Hilang(n){
+			for(var i=1;i<=5;i++){
+				document.getElementById("myDivSoal"+i).style.display="none";
+			}
+			if(n<6)document.getElementById("myDivSoal"+n).style.display="";
+			document.getElementById("myNilai").style.display="none";
+		}
+		
+		function ViewSoal(ct){
+			nosoal+=ct;
+			nosoal = Math.max(1,Math.min(6,nosoal));
+			Hilang(nosoal);
+			
+			if(nosoal==6){
+				cekPilihan(); // cek nilai setelah 5 soal
+				//lihat nilai
+				//semua button grey
+				document.getElementById("myNilai").style.display="";
+				btnUlang.style.display = "";//
+				btnBeranda.style.display = "";//
+				var count = 0;
+				for(var i=0;i<5;i++){
+					count+=arResult[i];
+				}
+				var ket = '<span style="font-size: 20px;line-height: 0.5;color:#000000">';
+				if(count<3) 		ket = "Hmmm masih pemanasan ya, <br>yuk coba baca materinya lagi!";
+				else if(count<4) 	ket = "Kamu sudah paham dasar materinya, baca ulang biar makin ok!";
+				else if(count<5) 	ket = "Gak diragukan lagi, pemahamanmu udah di atas rata-rata nih!";
+				else  				ket = "Keren banget! Kamu beneran paham materi Shape dan WordArt ini.";
+				ket+='<span style="font-size: 16px;line-height: 0.5;color:yellow"><br><br>Tekan F5 atau Ulang untuk mengulang kuis.'
+				
+				var ss="";
+				ss += '<span style="font-size: 20px;line-height: 0.5">Hasil kuis seru :'+'<br><br>';
+				//ss += "Benar = "+count+"<br>";
+				//ss += "Salah = "+(5-count)+"<br><br>";
+				ss += '<span style="font-size: 40px;line-height: 0.5">Nilai kamu : '+(count*100/5)+'<br><br>';
+				//ss += '<span style="font-size: 20px;line-height: 0.5;">Keterangan : '+"<br>";
+				ss += '<span style="font-size: 20px;line-height: 0.5;">'+"<br>";
+				ss += ""+ket+"";
+				document.getElementById("myNilai").innerHTML = ss;
+				btnKembali.style.display = "none";
+				btnLanjut.style.display = "none";//
+			}else if(nosoal==1){
+				btnKembali.style.display = "none";
+				btnLanjut.style.display = "";//none
+			}else if(nosoal>1 && nosoal<6){
+				btnKembali.style.display = "";//none
+				btnLanjut.style.display = "";//none
+			}
+		}
+		
+	</script>
+	<script>
+		
+	</script>
+	<script>
+		function UbahWindow(){
+			XYbenda();
+		}
+		function ZoomAll(){
+			let lebarJendela = window.innerWidth;
+			let tinggiJendela = window.innerHeight;
+			var xscale = lebarJendela/840;
+			var yscale = tinggiJendela/472;
+			scl = 0.95*Math.min(xscale,yscale);
+			fixzoom = scl*100;
+			document.body.style.zoom = ""+fixzoom+"%";
+			//myBG.style.clipPath = "polygon(0 0, "+fixzoom+"% 0, "+fixzoom+"% "+fixzoom+"%, 0 "+fixzoom+"%)";
+			UbahWindow();
+		}
+		
+		ZoomAll();
+		//window.resizeTo(840, 472);
+		
+		function handleClick(event) {
+			console.log("handleClick");
+		}
+		myBG.addEventListener('click', handleClick);
+		setTimeout(() => {
+			console.log("handleClick")
+			ZoomAll();
+			myBG.removeEventListener('click', handleClick);
+		}, 50);
+	</script>
+	<script>
+		//function acak array
+		function RandomMyArray(Arr){
+			for (var i=0; i<Arr.length; i++){
+				var r = Math.floor(Math.random() * Arr.length);
+				var a = Arr[i];
+				Arr[i] = Arr[r];
+				Arr[r] = a;
+			}
+			return Arr;
+		}
+		function arraysAreEqual(arr1, arr2) {
+			if (arr1.length !== arr2.length) {
+			   return false;
+			}
+			return arr1.every((val, index) => val === arr2[index]);
+		}
+	</script>
+	<script>
+		window.addEventListener('resize', () => {
+			ZoomAll();
+		});
+	</script>
+	
+	
+	<script>
+	</script>
+</body>
+</html>
